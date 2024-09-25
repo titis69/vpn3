@@ -4,9 +4,9 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
-RED="\033[0;31m" 
+RED="\033[0;31m"
 COLOR1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
+COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"               	 
 ###########- END COLOR CODE -##########
 
 
@@ -19,7 +19,7 @@ portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• SSH PANEL MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 read -p "   Username : " Login
@@ -33,10 +33,10 @@ fi
 
 if grep -qw "$Login" /etc/xray/ssh.txt; then
 echo -e "$COLOR1│${NC}  [Error] Username \e[31m$Login\e[0m already exist"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
@@ -46,22 +46,22 @@ fi
 
 if [ -z $Login ]; then
 echo -e "$COLOR1│${NC} [Error] Username cannot be empty "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
-read -n 1 -s -r -p "    Press any key to back on menu"
+read -n 1 -s -r -p "	Press any key to back on menu"
 menu-ssh
 fi
 
 read -p "   Password : " Pass
 if [ -z $Pass ]; then
 echo -e "$COLOR1│${NC}  [Error] Password cannot be empty "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
@@ -69,10 +69,10 @@ fi
 read -p "   Expired (hari): " masaaktif
 if [ -z $masaaktif ]; then
 echo -e "$COLOR1│${NC}  [Error] EXP Date cannot be empty "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
@@ -101,69 +101,69 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• SSH PANEL MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│$NC  Username   : $Login" 
+echo -e "$COLOR1│$NC  Username   : $Login"
 echo -e "$COLOR1│$NC  Password   : $Pass"
-echo -e "$COLOR1│$NC  Expired On : $exp" 
+echo -e "$COLOR1│$NC  Expired On : $exp"
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
-echo -e "$COLOR1 $NC  IP         : $IP" 
-echo -e "$COLOR1 $NC  Host       : $domen" 
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh"
-echo -e "$COLOR1 $NC  Dropbear   : $db" 
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws, 8880" 
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl" 
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl" 
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1 $NC  IP     	: $IP"
+echo -e "$COLOR1 $NC  Host   	: $domen"
+echo -e "$COLOR1 $NC  OpenSSH	: $opensh"
+echo -e "$COLOR1 $NC  Dropbear   : $db"
+echo -e "$COLOR1 $NC  SSH-WS 	: $portsshws, 8880"
+echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"
+echo -e "$COLOR1 $NC  SSL/TLS	:$ssl"
+echo -e "$COLOR1 $NC  UDPGW  	: 7100-7300"
 echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
+echo -e "$COLOR1 $NC  DNS PubKey : $dnskey"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 else
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• SSH PANEL MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  Username   : $Login" 
+echo -e "$COLOR1 $NC  Username   : $Login"
 echo -e "$COLOR1 $NC  Password   : $Pass"
-echo -e "$COLOR1 $NC  Expired On : $exp" 
+echo -e "$COLOR1 $NC  Expired On : $exp"
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
-echo -e "$COLOR1 $NC  IP         : $IP" 
-echo -e "$COLOR1 $NC  Host       : $domen" 
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh"
-echo -e "$COLOR1 $NC  Dropbear   : $db" 
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws, 8880" 
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl" 
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl" 
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1 $NC  IP     	: $IP"
+echo -e "$COLOR1 $NC  Host   	: $domen"
+echo -e "$COLOR1 $NC  OpenSSH	: $opensh"
+echo -e "$COLOR1 $NC  Dropbear   : $db"
+echo -e "$COLOR1 $NC  SSH-WS 	: $portsshws, 8880"
+echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"
+echo -e "$COLOR1 $NC  SSL/TLS	:$ssl"
+echo -e "$COLOR1 $NC  UDPGW  	: 7100-7300"
 echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
+echo -e "$COLOR1 $NC  DNS PubKey : $dnskey"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 fi
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
 }
 function sshwss(){
-    clear
+	clear
 portdb=`cat ~/log-install.txt | grep -w "Dropbear" | cut -d: -f2|sed 's/ //g' | cut -f2 -d","`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 if [ -f "/etc/systemd/system/sshws.service" ]; then
 clear
 else
-wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/Vlukss/multi-ws/main/ssh/proxy3.js"
+wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/titis69/vpn3/main/ssh/proxy3.js"
 cat <<EOF > /etc/systemd/system/sshws.service
 [Unit]
 Description=WSenabler
@@ -183,52 +183,52 @@ EOF
 fi
 
 function start() {
-        clear
+    	clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • WEBSOCKET MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• WEBSOCKET MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" 
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/Vlukss/multi-ws/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/titis69/vpn3/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
 systemctl daemon-reload >/dev/null 2>&1
 systemctl enable sshws.service >/dev/null 2>&1
 systemctl start sshws.service >/dev/null 2>&1
-sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [ON]" /root/log-install.txt
+sed -i "/SSH Websocket/c\   - SSH Websocket       	: $portsshws [ON]" /root/log-install.txt
 echo -e "$COLOR1│${NC}  [INFO] • ${green}SSH Websocket Started${NC}"
 echo -e "$COLOR1│${NC}  [INFO] • Restart is require for Changes"
-echo -e "$COLOR1│${NC}           to take effect"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}       	to take effect"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 •Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	•Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
-sshwss 
+sshwss
 }
 
 function stop() {
-        clear
+    	clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • WEBSOCKET MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• WEBSOCKET MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" 
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 systemctl stop sshws.service >/dev/null 2>&1
 tmux kill-session -t sshws >/dev/null 2>&1
-sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [OFF]" /root/log-install.txt
+sed -i "/SSH Websocket/c\   - SSH Websocket       	: $portsshws [OFF]" /root/log-install.txt
 echo -e "$COLOR1│${NC}  [INFO] • ${red}SSH Websocket Stopped${NC}"
 echo -e "$COLOR1│${NC}  [INFO] • Restart is require for Changes"
-echo -e "$COLOR1│${NC}           to take effect"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}       	to take effect"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
-sshwss 
+sshwss
 }
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • WEBSOCKET MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• WEBSOCKET MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
@@ -241,10 +241,10 @@ echo -e "$COLOR1│$NC"
 echo -e "$COLOR1│$NC   ${COLOR1}[01]${NC} • Enable SSH WS   ${COLOR1}[02]${NC} • Disable SSH WS"
 echo -e "$COLOR1│$NC"  
 echo -e "$COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu :  "  opt
 echo -e ""
@@ -259,29 +259,29 @@ function cekssh(){
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}              • SSH ACTIVE USERS •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}          	• SSH ACTIVE USERS •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e ""
 
 if [ -e "/var/log/auth.log" ]; then
-        LOG="/var/log/auth.log";
+    	LOG="/var/log/auth.log";
 fi
 if [ -e "/var/log/secure" ]; then
-        LOG="/var/log/secure";
+    	LOG="/var/log/secure";
 fi
-               
+          	 
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 cat $LOG | grep -i dropbear | grep -i "Password auth succeeded" > /tmp/login-db.txt;
 for PID in "${data[@]}"
 do
-        cat /tmp/login-db.txt | grep "dropbear\[$PID\]" > /tmp/login-db-pid.txt;
-        NUM=`cat /tmp/login-db-pid.txt | wc -l`;
-        USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
-        IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
-        if [ $NUM -eq 1 ]; then
-                echo "$PID - $USER - $IP";
-        fi
+    	cat /tmp/login-db.txt | grep "dropbear\[$PID\]" > /tmp/login-db-pid.txt;
+    	NUM=`cat /tmp/login-db-pid.txt | wc -l`;
+    	USER=`cat /tmp/login-db-pid.txt | awk '{print $10}'`;
+    	IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
+    	if [ $NUM -eq 1 ]; then
+            	echo "$PID - $USER - $IP";
+    	fi
 
 done
 echo " "
@@ -290,28 +290,28 @@ data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 
 for PID in "${data[@]}"
 do
-        cat /tmp/login-db.txt | grep "sshd\[$PID\]" > /tmp/login-db-pid.txt;
-        NUM=`cat /tmp/login-db-pid.txt | wc -l`;
-        USER=`cat /tmp/login-db-pid.txt | awk '{print $9}'`;
-        IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
-        if [ $NUM -eq 1 ]; then
-                echo "$PID - $USER - $IP";
-        fi
+    	cat /tmp/login-db.txt | grep "sshd\[$PID\]" > /tmp/login-db-pid.txt;
+    	NUM=`cat /tmp/login-db-pid.txt | wc -l`;
+    	USER=`cat /tmp/login-db-pid.txt | awk '{print $9}'`;
+    	IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
+    	if [ $NUM -eq 1 ]; then
+            	echo "$PID - $USER - $IP";
+    	fi
 
 
 done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
-        echo " "
+    	echo " "
 
-        cat /etc/openvpn/server/openvpn-tcp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-tcp.txt
-        cat /tmp/vpn-login-tcp.txt
+    	cat /etc/openvpn/server/openvpn-tcp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/  	/g' > /tmp/vpn-login-tcp.txt
+    	cat /tmp/vpn-login-tcp.txt
 fi
 
 if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
-        echo " "
+    	echo " "
 
-        cat /etc/openvpn/server/openvpn-udp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-udp.txt
-        cat /tmp/vpn-login-udp.txt
+    	cat /etc/openvpn/server/openvpn-udp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/  	/g' > /tmp/vpn-login-udp.txt
+    	cat /tmp/vpn-login-udp.txt
 fi
 
 
@@ -319,10 +319,10 @@ rm -f /tmp/login-db-pid.txt
 rm -f /tmp/login-db.txt
 rm -f /tmp/vpn-login-tcp.txt
 rm -f /tmp/vpn-login-udp.txt
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "";
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
@@ -331,7 +331,7 @@ menu-ssh
 function delssh(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}              • SSH DELETE USERS •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}          	• SSH DELETE USERS •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 read -p "   Username : " Pengguna
@@ -347,10 +347,10 @@ else
 echo -e "   [INFO] Failure: User $Pengguna Not Exist."
 fi
 fi
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
@@ -359,7 +359,7 @@ menu-ssh
 function renewssh(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}             • RENEW SSH ACCOUNT •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         	• RENEW SSH ACCOUNT •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 read -p "   Username : " User
@@ -368,10 +368,10 @@ if getent passwd $User > /dev/null 2>&1; then
 ok="ok"
 else
 echo -e "$COLOR1│${NC}   [INFO] Failure: User $User Not Exist."
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu
@@ -379,10 +379,10 @@ fi
 
 if [ -z $User ]; then
 echo -e "$COLOR1│${NC}   [Error] Username cannot be empty "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu
@@ -405,27 +405,27 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}             • RENEW SSH ACCOUNT •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         	• RENEW SSH ACCOUNT •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "   Username   : $User"
 echo -e "   Days Added : $Days Days"
 echo -e "   Expires on : $Expiration_Display"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 else
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}             • RENEW SSH ACCOUNT •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         	• RENEW SSH ACCOUNT •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "   Username Doesnt Exist      "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "   Username Doesnt Exist  	"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 fi
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -436,10 +436,10 @@ menu-ssh
 function memberssh(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}             • RENEW SSH ACCOUNT •             ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         	• RENEW SSH ACCOUNT •         	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"    
-echo "   USERNAME          EXP DATE          STATUS"
+echo "   USERNAME      	EXP DATE      	STATUS"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"  
 while read expired
@@ -450,9 +450,9 @@ exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
 status="$(passwd -S $AKUN | awk '{print $2}' )"
 if [[ $ID -ge 1000 ]]; then
 if [[ "$status" = "L" ]]; then
-printf "%-17s %2s %-17s %2s \n" "   • $AKUN" "$exp     " "LOCKED"
+printf "%-17s %2s %-17s %2s \n" "   • $AKUN" "$exp 	" "LOCKED"
 else
-printf "%-17s %2s %-17s %2s \n" "   • $AKUN" "$exp     " "UNLOCKED"
+printf "%-17s %2s %-17s %2s \n" "   • $AKUN" "$exp 	" "UNLOCKED"
 fi
 fi
 done < /etc/passwd
@@ -460,10 +460,10 @@ JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"  
 echo "   Total: $JUMLAH User"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
@@ -501,58 +501,58 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}            • SSH TRIAL ACCOUNT •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}        	• SSH TRIAL ACCOUNT •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  Username   : $Login" 
+echo -e "$COLOR1 $NC  Username   : $Login"
 echo -e "$COLOR1 $NC  Password   : $Pass"
-echo -e "$COLOR1 $NC  Expired On : $exp" 
+echo -e "$COLOR1 $NC  Expired On : $exp"
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
-echo -e "$COLOR1 $NC  IP         : $IP" 
-echo -e "$COLOR1 $NC  Host       : $domen" 
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh"
-echo -e "$COLOR1 $NC  Dropbear   : $db" 
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws, 8880" 
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl" 
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl" 
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1 $NC  IP     	: $IP"
+echo -e "$COLOR1 $NC  Host   	: $domen"
+echo -e "$COLOR1 $NC  OpenSSH	: $opensh"
+echo -e "$COLOR1 $NC  Dropbear   : $db"
+echo -e "$COLOR1 $NC  SSH-WS 	: $portsshws, 8880"
+echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"
+echo -e "$COLOR1 $NC  SSL/TLS	:$ssl"
+echo -e "$COLOR1 $NC  UDPGW  	: 7100-7300"
 echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
+echo -e "$COLOR1 $NC  DNS PubKey : $dnskey"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
 else
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}            • SSH TRIAL ACCOUNT •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}        	• SSH TRIAL ACCOUNT •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  Username   : $Login" 
+echo -e "$COLOR1 $NC  Username   : $Login"
 echo -e "$COLOR1 $NC  Password   : $Pass"
-echo -e "$COLOR1 $NC  Expired On : $exp" 
+echo -e "$COLOR1 $NC  Expired On : $exp"
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
-echo -e "$COLOR1 $NC  IP         : $IP" 
-echo -e "$COLOR1 $NC  Host       : $domen" 
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh"
-echo -e "$COLOR1 $NC  Dropbear   : $db" 
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws, 8880" 
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl" 
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl" 
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1 $NC  IP     	: $IP"
+echo -e "$COLOR1 $NC  Host   	: $domen"
+echo -e "$COLOR1 $NC  OpenSSH	: $opensh"
+echo -e "$COLOR1 $NC  Dropbear   : $db"
+echo -e "$COLOR1 $NC  SSH-WS 	: $portsshws, 8880"
+echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"
+echo -e "$COLOR1 $NC  SSL/TLS	:$ssl"
+echo -e "$COLOR1 $NC  UDPGW  	: 7100-7300"
 echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
+echo -e "$COLOR1 $NC  DNS PubKey : $dnskey"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 fi
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -560,19 +560,19 @@ menu-ssh
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC} ${COLBG1}           	• SSH PANEL MENU •          	${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}
- $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD SSH         ${COLOR1}[05]${NC} • DELETE SSH${NC}    $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[02]${NC} • TRIAL SSH       ${COLOR1}[06]${NC} • RENEW SSH${NC}     $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[03]${NC} • USER ONLINE     ${COLOR1}[07]${NC} • USERS LIST${NC}    $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[04]${NC} • ENABLE WS                            $COLOR1│$NC
- $COLOR1│$NC                                              ${NC} $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
-echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}" 
+ $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD SSH     	${COLOR1}[05]${NC} • DELETE SSH${NC}	$COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[02]${NC} • TRIAL SSH   	${COLOR1}[06]${NC} • RENEW SSH${NC} 	$COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[03]${NC} • USER ONLINE 	${COLOR1}[07]${NC} • USERS LIST${NC}	$COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[04]${NC} • ENABLE WS                        	$COLOR1│$NC
+ $COLOR1│$NC                                          	${NC} $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                          	$COLOR1│$NC"
+echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                 • Vluks Store •                 $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC}             	• Vluks Store •             	$COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -p " Select menu :  "  opt
 echo -e ""
@@ -588,4 +588,7 @@ case $opt in
 *) clear ; menu-ssh ;;
 esac
 
-       
+  	 
+
+
+
