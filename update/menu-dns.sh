@@ -10,10 +10,6 @@ APIGIT=$(cat /etc/ssnvpn/github/api)
 EMAILGIT=$(cat /etc/ssnvpn/github/email)
 USERGIT=$(cat /etc/ssnvpn/github/username)
 
-export RED='\033[0;31m';
-export GREEN='\033[0;32m';
-export ERROR="[${RED}ERROR${NC}]";
-export INFO="[${GREEN}INFO${NC}]";
 
 
 function setdns(){
