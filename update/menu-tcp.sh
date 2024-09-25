@@ -10,12 +10,7 @@ COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ /
 ###########- END COLOR CODE -##########
 
 
-# COLOR
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 
-MYIP=$(curl -s https://icanhazip.com)
 
 clear
 tcp_status() {
